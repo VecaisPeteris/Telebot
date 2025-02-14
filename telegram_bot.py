@@ -21,9 +21,9 @@ logging.basicConfig(level=logging.INFO)
 # Komanda /start
 @dp.message_handler(commands=["start"])
 async def send_welcome(message: types.Message):
-    await message.reply("Sveicināti! Šis ir rezervāciju bots krogam 'Vecais Pēteris'.
+    await message.reply('Sveicināti! Šis ir rezervāciju bots krogam "Vecais Pēteris".')
 " 
-                        "Rakstiet /reserve lai veiktu rezervāciju.")
+                         "Rakstiet /reserve lai veiktu rezervāciju.")
 
 # Komanda /reserve (rezervācijas veikšanai)
 @dp.message_handler(commands=["reserve"])
