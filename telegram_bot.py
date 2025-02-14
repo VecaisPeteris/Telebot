@@ -1,4 +1,3 @@
-
 import logging
 import os
 from aiogram import Bot, Dispatcher, types
@@ -21,21 +20,19 @@ logging.basicConfig(level=logging.INFO)
 # Komanda /start
 @dp.message_handler(commands=["start"])
 async def send_welcome(message: types.Message):
-    await message.reply('Sveicināti! Šis ir rezervāciju bots krogam "Vecais Pēteris".')
-" 
-                         "Rakstiet /reserve lai veiktu rezervāciju.")
+    await message.reply("Sveicināti! Šis ir rezervāciju bots krogam 'Vecais Pēteris'.\n"
+                        "Rakstiet /reserve, lai veiktu rezervāciju.")
 
 # Komanda /reserve (rezervācijas veikšanai)
 @dp.message_handler(commands=["reserve"])
 async def reserve_table(message: types.Message):
-    await message.reply("Lūdzu, ierakstiet savu vārdu, datumu un cilvēku skaitu!
-"
+    await message.reply("Lūdzu, ierakstiet savu vārdu, datumu un cilvēku skaitu!\n\n"
                         "Piemēram: 'Jānis, 15. februāris, 4 cilvēki'")
 
 # Nezināmu ziņojumu apstrāde
 @dp.message_handler()
 async def handle_message(message: types.Message):
-    await message.reply("Lūdzu, izmantojiet komandu /reserve lai veiktu rezervāciju.")
+    await message.reply("Lūdzu, izmantojiet komandu /reserve, lai veiktu rezervāciju.")
 
 # Palaist bota darbību
 if __name__ == "__main__":
